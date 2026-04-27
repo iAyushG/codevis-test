@@ -1,0 +1,17 @@
+name: codevis analysis
+
+on:
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: iAyushG/codevis@master
